@@ -1,5 +1,5 @@
 # aws-open5gs-ngfw-s1
-This repository contains terraform templates to deploy an AWS VPC with three subnets and four VMs, one of which 
+This repository contains terraform templates to deploy an AWS VPC with five subnets and four VMs, one of which 
 is a Palo Alto Networks NGFW residing on the 4G S1 and S11 interfaces.  Three Ubuntu VMs are
 deployed in the "private" subnet to support the open5GS packet, which has 4G NFs enabled.  The steps
 to configure the open5GS core are included [here](open5gs_epc_install.md).
