@@ -4,8 +4,9 @@ is a Palo Alto Networks NGFW residing on the 4G S1 and S11 interfaces.  Three Ub
 deployed in the "private" subnet to support the open5GS packet, which has 4G NFs enabled.  The steps
 to configure the open5GS core are included [here](open5gs_epc_install.md).
 
-The Palo Alto Networks VM is [boostrapped](https://docs.paloaltonetworks.com/vm-series/10-2/vm-series-deployment/bootstrap-the-vm-series-firewall/bootstrap-the-vm-series-firewall-in-aws) (using Palo Alto Networks terraform modules) so that it spins up fully configured for allowing secure SSH access
-into the Ubuntu servers, as well as inspection and NAT of outbound traffic from the packet core.
+The Palo Alto Networks VM is [boostrapped](https://docs.paloaltonetworks.com/vm-series/10-2/vm-series-deployment/bootstrap-the-vm-series-firewall/bootstrap-the-vm-series-firewall-in-aws) 
+(using Palo Alto Networks terraform modules) so that it spins up fully configured with appropriate zones, network interface, 
+policies, profiles, etc.
 
 NOTE: These templates do not create redundant NGFWs or packet core elements.  For a production grade architecutre multiple Availability Zones and 
 NGFWs should be used, as show in the Palo Alto Networks [AWS Reference Architecture Guide](https://www.paloaltonetworks.com/resources/guides/intelligent-architectures-aws-reference-architecture)
