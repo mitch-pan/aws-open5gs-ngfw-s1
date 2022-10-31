@@ -209,7 +209,7 @@ Save the file and try the config:
 sudo netplan try
 ```
 
-If there are no errors, hit enter to accept the changes.  Your secondary interface (10.100.3.21) should be up now.
+If there are no errors, hit enter to accept the changes.  Your second interface (10.100.4.20) should be up now.
 
 #### Edit the SGW Config
 
@@ -345,7 +345,7 @@ sgwc:
 sudo systemctl restart open5gs-mmed
 ```
 
-You can verify it started by looking at `/var/log/open5gs/hss.log`
+You can verify it started by looking at `/var/log/open5gs/mme.log`
 
 
 ### Start select NFs on Ubuntu-EPC
@@ -363,7 +363,7 @@ sudo systemctl start open5gs-upfd
 It is recommended to take these commands and put them in a script to make your life easier.
 
 
-### Stop Uncomplicated FW on Ubuntu-Core
+### Stop Uncomplicated FW on Ubuntu-EPC
 
 Check and see if the “ufw” is running.  If it is then disable it.
 
@@ -426,8 +426,10 @@ that route now.
 ## Next Steps
 
 Now that the 5G core is up and running, subscribers have been configured and the software radio and UE have been configured, 
-we should be able to have a eNodeB connect to the packet core.  Traffic from those UEs will be secured via the NGFW
-we deployed in this excercise.  
+we should be able to have a eNodeB connect to the packet core.  Because the addresses used by the packet core are private 
+addresses, you may need to allow external access depending on where you put the eNodeB.  
+
+Traffic from UEs will be secured via the NGFW we deployed in this excercise.  
 
 To test connectivity you have a couple of options:
 
